@@ -1,0 +1,11 @@
+!mamba install pandas
+import pandas as pd
+
+df = pd.read_csv('bike_rides.csv')
+
+print("Welcome to Bike Speed Percentile Calculator!")
+uv = float(input("Input Top Bike Speed in Meters per Second:"))
+
+p = ((df['speed'] <= uv).mean() * 100).round()
+
+print("Speed Percentile:", p)
